@@ -1,6 +1,7 @@
 package jp.techacademy.tomoya.kobayashi5.autoslideshowapp
 
 import android.Manifest
+import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.pm.PackageManager
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                             .setPositiveButton("OK") { _, _ ->
                             }
                             .show()
+                            finishAndRemoveTask()
                 }
         }
     }
