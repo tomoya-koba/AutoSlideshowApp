@@ -61,9 +61,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     AlertDialog.Builder(this)
                             .setMessage("権限を許可してください")
                             .setPositiveButton("OK") { _, _ ->
+                                finishAndRemoveTask()
                             }
                             .show()
-                            finishAndRemoveTask()
                 }
         }
     }
@@ -167,8 +167,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
     override fun onDestroy() {
+        super.onDestroy()
         if (mCursor != null) {
-            super.onDestroy()
             mCursor!!.close()
         }
     }
